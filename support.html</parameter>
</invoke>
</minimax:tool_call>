@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Policy Bazar</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=150&h=50&fit=crop" 
+                     alt="Policy Bazar Logo" class="logo-img">
+                <span class="brand-text ms-2">Policy Bazar</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <form class="d-flex mx-auto search-form">
+                    <div class="input-group">
+                        <span class="input-group-text bg-light border-end-0">
+                            <i class="fas fa-search text-muted"></i>
+                        </span>
+                        <input class="form-control border-start-0" type="search" 
+                               placeholder="Search..." aria-label="Search">
+                        <button class="btn btn-primary" type="submit">Search</button>
+                    </div>
+                </form>
+                <div class="d-flex align-items-center mt-3 mt-lg-0">
+                    <a href="account.html" class="btn btn-outline-primary me-2">
+                        <i class="fas fa-user me-1"></i> Login
+                    </a>
+                    <a href="account.html" class="btn btn-primary">
+                        <i class="fas fa-user-plus me-1"></i> Sign Up
+                    </a>
+                </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center text-white">
+                    <h1 class="fw-bold mb-3">Customer Support</h1>
+                    <p class="lead mb-4">We're here to help you 24/7</p>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                            <li class="breadcrumb-item active text-white">Support</li>
+                        </ol>
+                    </nav>
+                </div>
+        </div>
+    </section>
+
+    <!-- Support Options -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4 mb-5">
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm text-center h-100 p-4">
+                        <div class="icon-box bg-primary-subtle text-primary rounded-3 mx-auto mb-3">
+                            <i class="fas fa-phone fa-2x"></i>
+                        </div>
+                        <h5>Call Us</h5>
+                        <p class="text-muted small mb-3">Available 24/7</p>
+                        <a href="tel:1800-123-4567" class="btn btn-outline-primary">1800-123-4567</a>
+                    </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm text-center h-100 p-4">
+                        <div class="icon-box bg-success-subtle text-success rounded-3 mx-auto mb-3">
+                            <i class="fas fa-envelope fa-2x"></i>
+                        </div>
+                        <h5>Email Us</h5>
+                        <p class="text-muted small mb-3">Response within 24hrs</p>
+                        <a href="mailto:support@policybazar.com" class="btn btn-outline-success">Send Email</a>
+                    </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm text-center h-100 p-4">
+                        <div class="icon-box bg-warning-subtle text-warning rounded-3 mx-auto mb-3">
+                            <i class="fas fa-comments fa-2x"></i>
+                        </div>
+                        <h5>Live Chat</h5>
+                        <p class="text-muted small mb-3">Chat with our agents</p>
+                        <button class="btn btn-outline-warning" id="live-chat-btn">Start Chat</button>
+                    </div>
+                <div class="col-md-3">
+                    <div class="card border-0 shadow-sm text-center h-100 p-4">
+                        <div class="icon-box bg-info-subtle text-info rounded-3 mx-auto mb-3">
+                            <i class="fas fa-headset fa-2x"></i>
+                        </div>
+                        <h5>Request Callback</h5>
+                        <p class="text-muted small mb-3">We call you back</p>
+                        <button class="btn btn-outline-info" data-bs-toggle="modal" data-bs-target="#callbackModal">Request</button>
+                    </div>
+            </div>
+
+            <div class="row g-4">
+                <!-- Contact Form -->
+                <div class="col-lg-8">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="mb-0"><i class="fas fa-paper-plane me-2"></i>Send Us a Message</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <form id="contact-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="contact-name" class="form-label">Your Name *</label>
+                                        <input type="text" class="form-control" id="contact-name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contact-email" class="form-label">Email Address *</label>
+                                        <input type="email" class="form-control" id="contact-email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contact-phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="contact-phone">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contact-subject" class="form-label">Subject *</label>
+                                        <select class="form-select" id="contact-subject" required>
+                                            <option value="">Select subject</option>
+                                            <option value="general">General Inquiry</option>
+                                            <option value="policy">Policy Information</option>
+                                            <option value="claims">Claims Assistance</option>
+                                            <option value="renewal">Renewal</option>
+                                            <option value="complaint">Complaint</option>
+                                            <option value="other">Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="contact-message" class="form-label">Message *</label>
+                                        <textarea class="form-control" id="contact-message" rows="5" 
+                                                  placeholder="How can we help you?" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="contact-consent" required>
+                                            <label class="form-check-label" for="contact-consent">
+                                                I agree to receive communications from Policy Bazar.
+                                            </label>
+                                        </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-lg">
+                                            <i class="fas fa-paper-plane me-2"></i> Send Message
+                                        </button>
+                                    </div>
+                            </form>
+                        </div>
+                </div>
+
+                <!-- Branch Locator -->
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="mb-0"><i class="fas fa-map-marker-alt me-2"></i>Find a Branch</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <label class="form-label">Select City</label>
+                                <select class="form-select">
+                                    <option value="">Choose a city</option>
+                                    <option value="mumbai">Mumbai</option>
+                                    <option value="delhi">Delhi</option>
+                                    <option value="bangalore">Bangalore</option>
+                                    <option value="chennai">Chennai</option>
+                                    <option value="hyderabad">Hyderabad</option>
+                                    <option value="pune">Pune</option>
+                                    <option value="kolkata">Kolkata</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label">Or Enter Pincode</label>
+                                <input type="text" class="form-control" placeholder="e.g., 400001">
+                            </div>
+                            <button class="btn btn-primary w-100">
+                                <i class="fas fa-search me-1"></i> Search
+                            </button>
+                        </div>
+
+                    <!-- Contact Info -->
+                    <div class="card border-0 shadow-sm mb-4">
+                        <div class="card-body p-4">
+                            <h5 class="mb-3">Corporate Office</h5>
+                            <div class="contact-item mb-3">
+                                <i class="fas fa-map-marker-alt text-primary me-2"></i>
+                                <span>Policy Bazar Tower, Plot No. 123, Sector 15, CBD Belapur, Navi Mumbai - 400614</span>
+                            </div>
+                            <div class="contact-item mb-3">
+                                <i class="fas fa-phone text-primary me-2"></i>
+                                <a href="tel:022-6789-1234" class="text-decoration-none">022-6789-1234</a>
+                            </div>
+                            <div class="contact-item mb-3">
+                                <i class="fas fa-envelope text-primary me-2"></i>
+                                <a href="mailto:info@policybazar.com" class="text-decoration-none">info@policybazar.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-clock text-primary me-2"></i>
+                                <span>Mon - Sat: 9:00 AM - 7:00 PM</span>
+                            </div>
+                    </div>
+
+                    <!-- Grievance -->
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-body p-4">
+                            <h5 class="mb-3 text-danger">Grievance Officer</h5>
+                            <p class="text-muted small mb-3">For escalation of complaints:</p>
+                            <div class="contact-item mb-2">
+                                <i class="fas fa-user text-danger me-2"></i>
+                                <span>Mr. Raghav Sharma</span>
+                            </div>
+                            <div class="contact-item mb-2">
+                                <i class="fas fa-envelope text-danger me-2"></i>
+                                <a href="mailto:grievance@policybazar.com">grievance@policybazar.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone text-danger me-2"></i>
+                                <a href="tel:1800-987-6543">1800-987-6543</a>
+                            </div>
+                    </div>
+            </div>
+
+            <!-- FAQs Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm">
+                        <div class="card-header bg-white py-3">
+                            <h5 class="mb-0"><i class="fas fa-question-circle me-2"></i>Frequently Asked Questions</h5>
+                        </div>
+                        <div class="card-body p-4">
+                            <div class="accordion" id="faqAccordion">
+                                <div class="accordion-item faq-item mb-3 border rounded">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                            How do I buy an insurance policy?
+                                        </button>
+                                    </h2>
+                                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Buying insurance on Policy Bazar is simple. Browse through our range of policies, compare features and prices, select the one that suits your needs, and click "Buy Now". You'll need to fill in some basic details, after which you can make the payment online. Your policy will be emailed to you within minutes.
+                                        </div>
+                                </div>
+                                <div class="accordion-item faq-item mb-3 border rounded">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                            How can I renew my policy?
+                                        </button>
+                                    </h2>
+                                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            You can renew your policy by logging into your Policy Bazar account, navigating to "My Policies", and clicking the "Renew" button on the policy you wish to renew. Alternatively, you can call us at 1800-123-4567 or visit your nearest branch for renewal assistance.
+                                        </div>
+                                </div>
+                                <div class="accordion-item faq-item mb-3 border rounded">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                            What documents are required for claim settlement?
+                                        </button>
+                                    </h2>
+                                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            The required documents vary by type of insurance. Generally, you need your policy document, ID proof, and claim form along with incident-specific documents like medical reports (for health claims), FIR (for motor claims), etc. Visit our Claims page for a detailed checklist.
+                                        </div>
+                                </div>
+                                <div class="accordion-item faq-item mb-3 border rounded">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                            How long does claim settlement take?
+                                        </button>
+                                    </h2>
+                                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            We strive to settle all claims within 7 working days of receiving complete documentation. Simple claims are often settled within 3-5 days. Complex claims may take up to 15 days. You can track your claim status online 24/7.
+                                        </div>
+                                </div>
+                                <div class="accordion-item faq-item mb-3 border rounded">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                            Can I cancel my policy?
+                                        </button>
+                                    </h2>
+                                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Yes, you can cancel your policy within the free-look period (15 days from policy issuance) for a full refund, provided no claim has been made. After the free-look period, cancellation will be subject to the terms and conditions mentioned in your policy document.
+                                        </div>
+                                </div>
+                                <div class="accordion-item faq-item mb-3 border rounded">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                            How can I download my policy document?
+                                        </button>
+                                    </h2>
+                                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            Log in to your Policy Bazar account, go to "My Policies", and click on the policy you want. You'll find a "Download Policy Document" button on the policy details page. The PDF will be downloaded instantly.
+                                        </div>
+                                </div>
+                            <div class="text-center mt-4">
+                                <a href="#" class="btn btn-outline-primary">
+                                    <i class="fas fa-book-open me-2"></i> View All FAQs
+                                </a>
+                            </div>
+                    </div>
+            </div>
+    </section>
+
+    <!-- Callback Modal -->
+    <div class="modal fade" id="callbackModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Request a Callback</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" class="form-control" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-control" placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Preferred Time</label>
+                            <select class="form-select">
+                                <option>ASAP</option>
+                                <option>Morning (9AM - 12PM)</option>
+                                <option>Afternoon (12PM - 5PM)</option>
+                                <option>Evening (5PM - 8PM)</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Topic</label>
+                            <select class="form-select">
+                                <option>General Inquiry</option>
+                                <option>Policy Purchase</option>
+                                <option>Claim Assistance</option>
+                                <option>Renewal</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Submit Request</button>
+                </div>
+        </div>
+
+    <!-- CTA Section -->
+    <section class="py-5 cta-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold text-white mb-3">Download Our Mobile App</h2>
+                    <p class="text-white-50 mb-0">Get instant policy updates and claim notifications on the go.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                    <button class="btn btn-light btn-lg me-2">
+                        <i class="fab fa-google-play me-2"></i> Play Store
+                    </button>
+                    <button class="btn btn-light btn-lg">
+                        <i class="fab fa-apple me-2"></i> App Store
+                    </button>
+                </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer bg-dark text-white pt-5 pb-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <div class="footer-brand mb-3">
+                        <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?w=150&h=50&fit=crop" 
+                             alt="Policy Bazar Logo" class="footer-logo mb-2">
+                        <span class="footer-brand-text">Policy Bazar</span>
+                    </div>
+                    <p class="footer-description">
+                        Policy Bazar is your trusted partner for all insurance needs. We make insurance simple, 
+                        transparent, and accessible for everyone.
+                    </p>
+                    <div class="footer-social mt-3">
+                        <a href="#" class="social-link me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link me-2"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-3">Quick Links</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="index.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+                        <li class="mb-2"><a href="policies.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Policies</a></li>
+                        <li class="mb-2"><a href="agents.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Agents</a></li>
+                        <li class="mb-2"><a href="claims.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Claims</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading mb-3">Insurance Types</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="policies.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Health Insurance</a></li>
+                        <li class="mb-2"><a href="policies.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Life Insurance</a></li>
+                        <li class="mb-2"><a href="policies.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Motor Insurance</a></li>
+                        <li class="mb-2"><a href="policies.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Home Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-heading mb-3">Support</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2"><a href="support.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Help Center</a></li>
+                        <li class="mb-2"><a href="support.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>FAQs</a></li>
+                        <li class="mb-2"><a href="support.html" class="footer-link"><i class="fas fa-chevron-right me-2"></i>Contact Us</a></li>
+                    </ul>
+                    <div class="footer-contact mt-3">
+                        <div class="contact-item mb-2">
+                            <i class="fas fa-envelope me-2 text-primary"></i>
+                            <a href="mailto:support@policybazar.com" class="footer-link">support@policybazar.com</a>
+                        </div>
+                        <div class="contact-item mb-2">
+                            <i class="fas fa-phone me-2 text-primary"></i>
+                            <a href="tel:1800-123-4567" class="footer-link">1800-123-4567</a>
+                        </div>
+                </div>
+            <div class="row mt-4 pt-4 border-top border-secondary">
+                <div class="col-md-6 mb-3 mb-md-0">
+                    <p class="mb-0 text-muted">&copy; <span id="current-year"></span> Policy Bazar. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <ul class="footer-legal list-inline mb-0">
+                        <li class="list-inline-item"><a href="#" class="footer-link">Privacy Policy</a></li>
+                        <li class="list-inline-item"><span class="text-muted">|</span></li>
+                        <li class="list-inline-item"><a href="#" class="footer-link">Terms of Service</a></li>
+                    </ul>
+                </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
